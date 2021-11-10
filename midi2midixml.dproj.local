@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.037,=D:\git-win\InsertLyrics\source\UEventArray.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.077,=D:\git-win\InsertLyrics\source\UMyMemoryStream.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.117,=D:\git-win\InsertLyrics\source\UXmlNode.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.510,D:\git-win\midi2midixml\midi2midixml.dproj=C:\Users\Jürg Müller\Documents\Embarcadero\Studio\Projekte\Project2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.040,D:\git-win\midi2midixml\UMidi2Xml.pas=C:\Users\Jürg Müller\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.444,=C:\Users\Jürg Müller\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.067,=D:\git-win\InsertLyrics\source\UMidiDataStream.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.097,=D:\git-win\InsertLyrics\source\UMyMidiStream.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.040,D:\git-win\midi2midixml\UMidi2Xml.dfm=C:\Users\Jürg Müller\Documents\Embarcadero\Studio\Projekte\Unit1.dfm</Transaction>
+    <Transaction>2021.11.10 08:14:46.363,D:\git-win\InsertLyrics\source\UEventArray.pas=</Transaction>
+    <Transaction>2021.11.10 08:15:03.044,D:\git-win\InsertLyrics\source\UMidiDataStream.pas=</Transaction>
+    <Transaction>2021.11.10 08:15:07.284,D:\git-win\InsertLyrics\source\UMyMemoryStream.pas=</Transaction>
+    <Transaction>2021.11.10 08:15:10.694,D:\git-win\InsertLyrics\source\UMyMidiStream.pas=</Transaction>
+    <Transaction>2021.11.10 08:15:13.714,D:\git-win\InsertLyrics\source\UXmlNode.pas=</Transaction>
+    <Transaction>2021.11.10 08:16:06.357,=D:\git-win\midi2midixml\UMidiDataStream.pas</Transaction>
+    <Transaction>2021.11.10 08:16:06.377,=D:\git-win\midi2midixml\UMyMemoryStream.pas</Transaction>
+    <Transaction>2021.11.10 08:16:06.397,=D:\git-win\midi2midixml\UMyMidiStream.pas</Transaction>
+    <Transaction>2021.11.10 08:16:06.417,=D:\git-win\midi2midixml\UXmlNode.pas</Transaction>
+    <Transaction>2021.11.10 08:17:00.768,=D:\git-win\midi2midixml\UEventArray.pas</Transaction>
+  </Transactions>
+</BorlandProject>
