@@ -53,9 +53,10 @@ begin
         FileNameLength := DragQueryFile(DropH, i, nil, 0);
         SetLength(FileName, FileNameLength);
         DragQueryFile(DropH, i, PChar(FileName), FileNameLength + 1);
-        ext := ExtractFileExt(Filename);
-        if (LowerCase(ext) = '.mid') or
-           (LowerCase(ext) = '.midi') then
+        ext := LowerCase(ExtractFileExt(Filename));
+        if (ext = '.mid') or
+           (ext = '.midi') or
+           (ext = '.kar') then
         begin
           ConvertFile(FileName);
         end;
@@ -77,6 +78,7 @@ var
   Ok: boolean;
   EventArray: TEventArray;
   last_var_len: integer;
+  ext: string;
 begin
   stream := TMidiDataStream.Create;
   EventArray := TEventArray.Create;
@@ -85,8 +87,9 @@ begin
   try
     if FileExists(FileName) then
     begin
+      ext := ExtractFileExt(FileName);
       stream.LoadFromFile(FileName);
-      SetLength(FileName, Length(FileName) - Length(ExtractFileExt(FileName)));
+      SetLength(FileName, Length(FileName) - Length(ext));
 
       with stream do
       begin
@@ -123,7 +126,7 @@ begin
 
             eventNode := track.AppendChildNode('Event');
             eventNode.AppendChildNode('Delta', last_var_len);
-            last_var_len := 0;
+            last_var_len := event.var_len;
 
             if event.command = $f0 then  // universal system exclusive
             begin
@@ -137,6 +140,7 @@ begin
               while ReadByte <> $f7 do ;
               last_var_len := ReadVariableLen;
               eventNode.AppendChildNode('UniversalSystemExclusive');
+              continue;
             end;
 
             Ok := true;
@@ -247,13 +251,12 @@ begin
 
           end;
         end;
-        if FileExists(FileName + '.xml') and
-           (Application.MessageBox(PChar(FileName + '.xml exists! Overwrite it?'),
+        if FileExists(FileName + '.midixml') and
+           (Application.MessageBox(PChar(FileName + '.midixml exists! Overwrite it?'),
                                 'Overwrite?', MB_YESNO) <> ID_YES) then
           exit;
-        root.SaveToXmlFile(FileName + '.xml',
-            '<?xml version="1.0" encoding="UTF-8"?>'#13#10 +
-            '<!DOCTYPE MIDIFile PUBLIC "-//Recordare//DTD MusicXML 0.9 MIDI//EN" "http://www.musicxml.org/dtds/midixml.dtd">'#13#10);
+        root.SaveToXmlFile(FileName + '.midixml',
+            '<?xml version="1.0" encoding="UTF-8"?>'#13#10);
       end;
       if stream.MakeEventArray(EventArray, true) then
         EventArray.SaveSimpleMidiToFile(FileName + '.txt', true);
